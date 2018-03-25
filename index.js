@@ -16,7 +16,17 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  return `In your cart, you have ${cart.join(', ')}`
+  if (!cart.length) {
+    return "Your shopping cart is empty."
+  }
+
+  const itemsAndPrices = []
+
+  for (let i = 0; i < cart.length; i++) {
+    itemsAndPrices.push(`${cart[i].itemName} at $${cart[i].itemPrice}`);
+  }
+
+  return `In your cart, you have ${itemsAndPrices.join(', ')}.`
 }
 
 function total() {
