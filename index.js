@@ -23,7 +23,7 @@ function viewCart() {
   const itemsAndPrices = []
 
   for (let i = 0; i < cart.length; i++) {
-    itemsAndPrices.push(`${cart[i].itemName} at $${cart[i].itemPrice}`);
+    itemsAndPrices.push(`${i === cart.length - 1 ? "and " : "" }${cart[i].itemName} at $${cart[i].itemPrice}`);
   }
 
   return `In your cart, you have ${itemsAndPrices.join(', ')}.`
